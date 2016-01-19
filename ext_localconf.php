@@ -36,10 +36,10 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 if ($confArr['addBrowseLinks']) {
 	// Add browseLinksHook
 	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['typo3/class.browse_links.php']['browseLinksHook'][] = 'EXT:'.$_EXTKEY.'/lib/class.tx_jfmulticontent_browselinkshooks.php:&tx_jfmulticontent_browselinkshooks';
-	if (t3lib_extMgm::isLoaded('rtehtmlarea')) {
+	if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('rtehtmlarea')) {
 		$TYPO3_CONF_VARS['SC_OPTIONS']['ext/rtehtmlarea/mod3/class.tx_rtehtmlarea_browse_links.php']['browseLinksHook'][] = 'EXT:'.$_EXTKEY.'/lib/class.tx_jfmulticontent_browselinkshooks.php:&tx_jfmulticontent_browselinkshooks';
 	}
 }
 
-t3lib_extMgm::addPItoST43($_EXTKEY, 'pi1/class.tx_jfmulticontent_pi1.php', '_pi1', 'list_type', 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43($_EXTKEY, 'pi1/class.tx_jfmulticontent_pi1.php', '_pi1', 'list_type', 1);
 ?>
