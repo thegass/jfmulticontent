@@ -1,0 +1,9 @@
+{
+  "name": "Plan2net/jfmulticontent",
+  "version": "1.0.0",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "description": "jfmulticontent",
+  "type": "typo3-cms-extension"
+}
