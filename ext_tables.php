@@ -173,25 +173,25 @@ if ($confArr["useStoragePidOnly"]) {
 }
 
 
-t3lib_div::loadTCA('tt_content');
-t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
+\TYPO3\CMS\Core\Utility\GeneralUtility::loadTCA('tt_content');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns, 1);
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$_EXTKEY.'_pi1'] = 'layout,select_key,pages';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$_EXTKEY.'_pi1'] = 'tx_jfmulticontent_view,tx_jfmulticontent_pages,tx_jfmulticontent_contents,tx_jfmulticontent_irre,pi_flexform';
 // Add reload field to tt_content
 $TCA['tt_content']['ctrl']['requestUpdate'] .= ($TCA['tt_content']['ctrl']['requestUpdate'] ? ',' : ''). 'tx_jfmulticontent_view';
 
-t3lib_extMgm::addPlugin(array(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(array(
 	'LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.list_type_pi1',
 	$_EXTKEY . '_pi1',
-	t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon.gif'
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'ext_icon.gif'
 ),'list_type');
 
 
-t3lib_extMgm::addPiFlexFormValue($_EXTKEY.'_pi1', 'FILE:EXT:'.$_EXTKEY.'/flexform_ds.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($_EXTKEY.'_pi1', 'FILE:EXT:'.$_EXTKEY.'/flexform_ds.xml');
 
 
 if (TYPO3_MODE == 'BE') {
-	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_jfmulticontent_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'pi1/class.tx_jfmulticontent_pi1_wizicon.php';
+	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_jfmulticontent_pi1_wizicon'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'pi1/class.tx_jfmulticontent_pi1_wizicon.php';
 	if (! isset($TCA['tt_content']['columns']['colPos']['config']['items'][$confArr['colPosOfIrreContent']])) {
 		// Add the new colPos to the array, only if the ID does not exist...
 		$TCA['tt_content']['columns']['colPos']['config']['items'][$confArr['colPosOfIrreContent']] = array ($_EXTKEY, $confArr['colPosOfIrreContent']);
@@ -199,6 +199,6 @@ if (TYPO3_MODE == 'BE') {
 }
 
 
-t3lib_extMgm::addStaticFile($_EXTKEY,'static/', 'Multi content');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY,'static/', 'Multi content');
 
 ?>
