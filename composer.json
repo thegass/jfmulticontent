@@ -7,6 +7,6 @@
   "description": "jfmulticontent",
   "type": "typo3-cms-extension",
   "autoload":{
-	"files": {"lib/class.tx_jfmulticontent_itemsProcFunc.php", "lib/class.tx_jfmulticontent_pagerenderer.php"}
+	"files": ["lib/class.tx_jfmulticontent_itemsProcFunc.php", "lib/class.tx_jfmulticontent_pagerenderer.php"]
   }
 }
