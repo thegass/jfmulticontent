@@ -168,7 +168,7 @@ class tx_jfmulticontent_ttnews_extend
 							}
 						}
 					} else {
-						t3lib_div::devLog("'{$jsToLoad}' does not exists!", $this->extKey, 2);
+						\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("'{$jsToLoad}' does not exists!", $this->extKey, 2);
 					}
 				}
 			}
@@ -198,12 +198,12 @@ class tx_jfmulticontent_ttnews_extend
 					}
 				} else {
 					if ($this->conf['jsMinify']) {
-						$temp_js = t3lib_div::minifyJavaScript($temp_js);
+						$temp_js = \TYPO3\CMS\Core\Utility\GeneralUtility::minifyJavaScript($temp_js);
 					}
 					if ($this->conf['jsInFooter'] || $allJsInFooter) {
-						$GLOBALS['TSFE']->additionalFooterData['js_'.$this->extKey.'_'.$hash] = t3lib_div::wrapJS($temp_js, TRUE);
+						$GLOBALS['TSFE']->additionalFooterData['js_'.$this->extKey.'_'.$hash] = \TYPO3\CMS\Core\Utility\GeneralUtility::wrapJS($temp_js, TRUE);
 					} else {
-						$GLOBALS['TSFE']->additionalHeaderData['js_'.$this->extKey.'_'.$hash] = t3lib_div::wrapJS($temp_js, TRUE);
+						$GLOBALS['TSFE']->additionalHeaderData['js_'.$this->extKey.'_'.$hash] = \TYPO3\CMS\Core\Utility\GeneralUtility::wrapJS($temp_js, TRUE);
 					}
 				}
 			}
@@ -220,7 +220,7 @@ class tx_jfmulticontent_ttnews_extend
 						$GLOBALS['TSFE']->additionalHeaderData['cssFile_'.$this->extKey.'_'.$file] = '<link rel="stylesheet" type="text/css" href="'.$file.'" media="all" />'.chr(10);
 					}
 				} else {
-					t3lib_div::devLog("'{$cssToLoad}' does not exists!", $this->extKey, 2);
+					\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("'{$cssToLoad}' does not exists!", $this->extKey, 2);
 				}
 			}
 		}
@@ -241,7 +241,7 @@ class tx_jfmulticontent_ttnews_extend
 
 	/**
 	 * Return the webbased path
-	 * 
+	 *
 	 * @param string $path
 	 * return string
 	 */
@@ -252,7 +252,7 @@ class tx_jfmulticontent_ttnews_extend
 
 	/**
 	 * Add additional JS file
-	 * 
+	 *
 	 * @param string $script
 	 * @param boolean $first
 	 * @return void
@@ -270,7 +270,7 @@ class tx_jfmulticontent_ttnews_extend
 
 	/**
 	 * Add JS to header
-	 * 
+	 *
 	 * @param string $script
 	 * @return void
 	 */
@@ -283,7 +283,7 @@ class tx_jfmulticontent_ttnews_extend
 
 	/**
 	 * Add additional CSS file
-	 * 
+	 *
 	 * @param string $script
 	 * @return void
 	 */
@@ -296,7 +296,7 @@ class tx_jfmulticontent_ttnews_extend
 
 	/**
 	 * Add CSS to header
-	 * 
+	 *
 	 * @param string $script
 	 * @return void
 	 */
@@ -308,17 +308,17 @@ class tx_jfmulticontent_ttnews_extend
 	}
 
 	/**
-	 * Returns the version of an extension (in 4.4 its possible to this with t3lib_extMgm::getExtensionVersion)
+	 * Returns the version of an extension (in 4.4 its possible to this with \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getExtensionVersion)
 	 * @param string $key
 	 * @return string
 	 */
 	function getExtensionVersion($key)
 	{
-		if (! t3lib_extMgm::isLoaded($key)) {
+		if (! \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded($key)) {
 			return '';
 		}
 		$_EXTKEY = $key;
-		include(t3lib_extMgm::extPath($key) . 'ext_emconf.php');
+		include(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($key) . 'ext_emconf.php');
 		return $EM_CONF[$key]['version'];
 	}
 
@@ -347,19 +347,19 @@ class tx_jfmulticontent_ttnews_extend
 		$this->setFlexFormData();
 		if (! isset($this->piFlexForm['data'])) {
 			if ($devlog === TRUE) {
-				t3lib_div::devLog("Flexform Data not set", $this->extKey, 1);
+				\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("Flexform Data not set", $this->extKey, 1);
 			}
 			return NULL;
 		}
 		if (! isset($this->piFlexForm['data'][$sheet])) {
 			if ($devlog === TRUE) {
-				t3lib_div::devLog("Flexform sheet '{$sheet}' not defined", $this->extKey, 1);
+				\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("Flexform sheet '{$sheet}' not defined", $this->extKey, 1);
 			}
 			return NULL;
 		}
 		if (! isset($this->piFlexForm['data'][$sheet]['lDEF'][$name])) {
 			if ($devlog === TRUE) {
-				t3lib_div::devLog("Flexform Data [{$sheet}][{$name}] does not exist", $this->extKey, 1);
+				\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("Flexform Data [{$sheet}][{$name}] does not exist", $this->extKey, 1);
 			}
 			return NULL;
 		}

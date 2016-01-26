@@ -93,7 +93,7 @@ class tx_jfmulticontent_pagerenderer
 							}
 						}
 					} else {
-						t3lib_div::devLog("'{$jsToLoad}' does not exists!", $this->extKey, 2);
+						\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("'{$jsToLoad}' does not exists!", $this->extKey, 2);
 					}
 				}
 			}
@@ -123,12 +123,12 @@ class tx_jfmulticontent_pagerenderer
 					}
 				} else {
 					if ($this->conf['jsMinify']) {
-						$temp_js = t3lib_div::minifyJavaScript($temp_js);
+						$temp_js = \TYPO3\CMS\Core\Utility\GeneralUtility::minifyJavaScript($temp_js);
 					}
 					if ($this->conf['jsInFooter'] || $allJsInFooter) {
-						$GLOBALS['TSFE']->additionalFooterData['js_'.$this->extKey.'_'.$hash] = t3lib_div::wrapJS($temp_js, TRUE);
+						$GLOBALS['TSFE']->additionalFooterData['js_'.$this->extKey.'_'.$hash] = \TYPO3\CMS\Core\Utility\GeneralUtility::wrapJS($temp_js, TRUE);
 					} else {
-						$GLOBALS['TSFE']->additionalHeaderData['js_'.$this->extKey.'_'.$hash] = t3lib_div::wrapJS($temp_js, TRUE);
+						$GLOBALS['TSFE']->additionalHeaderData['js_'.$this->extKey.'_'.$hash] = \TYPO3\CMS\Core\Utility\GeneralUtility::wrapJS($temp_js, TRUE);
 					}
 				}
 			}
@@ -145,7 +145,7 @@ class tx_jfmulticontent_pagerenderer
 						$GLOBALS['TSFE']->additionalHeaderData['cssFile_'.$this->extKey.'_'.$file] = '<link rel="stylesheet" type="text/css" href="'.$file.'" media="all" />'.chr(10);
 					}
 				} else {
-					t3lib_div::devLog("'{$cssToLoad}' does not exists!", $this->extKey, 2);
+					\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("'{$cssToLoad}' does not exists!", $this->extKey, 2);
 				}
 			}
 		}
@@ -158,7 +158,7 @@ class tx_jfmulticontent_pagerenderer
 					// Theres no possibility to add conditions for IE by pagerenderer, so this will be added in additionalHeaderData
 					$GLOBALS['TSFE']->additionalHeaderData['cssFile_'.$this->extKey.'_'.$file] = '<!--[if '.$cssToLoad['rule'].']><link rel="stylesheet" type="text/css" href="'.$file.'" media="all" /><![endif]-->'.chr(10);
 				} else {
-					t3lib_div::devLog("'{$cssToLoad['file']}' does not exists!", $this->extKey, 2);
+					\TYPO3\CMS\Core\Utility\GeneralUtility::devLog("'{$cssToLoad['file']}' does not exists!", $this->extKey, 2);
 				}
 			}
 		}
@@ -257,16 +257,16 @@ class tx_jfmulticontent_pagerenderer
 	}
 
 	/**
-	 * Returns the version of an extension (in 4.4 its possible to this with t3lib_extMgm::getExtensionVersion)
+	 * Returns the version of an extension (in 4.4 its possible to this with \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getExtensionVersion)
 	 * @param string $key
 	 * @return string
 	 */
 	public function getExtensionVersion($key) {
-		if (! t3lib_extMgm::isLoaded($key)) {
+		if (! \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded($key)) {
 			return '';
 		}
 		$_EXTKEY = $key;
-		include(t3lib_extMgm::extPath($key) . 'ext_emconf.php');
+		include(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($key) . 'ext_emconf.php');
 		return $EM_CONF[$key]['version'];
 	}
 }

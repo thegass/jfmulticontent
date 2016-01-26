@@ -41,6 +41,7 @@ class tx_jfmulticontent_tceFunc
 	 */
 	public function getCheckbox($PA, &$fObj)
 	{
+
 		$confArr = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['jfmulticontent']);
 		if ($confArr['useSelectInsteadCheckbox']) {
 			$PA['fieldConf']['config'] = array(
@@ -59,9 +60,10 @@ class tx_jfmulticontent_tceFunc
 			);
 		}
 		$tceforms = &$PA['pObj'];
+		var_export($PA);die();
 		return $tceforms->getSingleField_SW($PA['table'], $PA['field'], $PA['row'], $PA);
 	}
-	
+
 	/**
 	 * This will render the info text for the typoscript-style
 	 *

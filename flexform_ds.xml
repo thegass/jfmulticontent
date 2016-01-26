@@ -22,9 +22,9 @@
 							</config>
 						</TCEforms>
 					</style>
-					
+
 					<!-- COLUMN -->
-					
+
 					<columnOrder>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -126,23 +126,21 @@
 							<displayCond>FIELD:style:IN:,2column,3column,4column,5column</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.equalize</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
 					</equalize>
-					
+
 					<!-- TAB -->
-					
+
 					<tabCollapsible>
 						<TCEforms>
 							<exclude>1</exclude>
 							<displayCond>FIELD:style:=:tab</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.tabCollapsible</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -167,8 +165,7 @@
 							<displayCond>FIELD:style:=:tab</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.tabRandomContent</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -250,8 +247,7 @@
 							<displayCond>FIELD:style:=:tab</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.tabCookieRoot</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -538,17 +534,17 @@
 							</config>
 						</TCEforms>
 					</tabShowTransitionduration>
-					
+
 					<!-- ACCORDION -->
-					
+
 					<accordionCollapsible>
 						<TCEforms>
 							<exclude>1</exclude>
 							<displayCond>FIELD:style:=:accordion</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.accordionCollapsible</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -559,8 +555,8 @@
 							<displayCond>FIELD:style:=:accordion</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.accordionClosed</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -586,8 +582,8 @@
 							<displayCond>FIELD:style:=:accordion</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.accordionRandomContent</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -655,8 +651,8 @@
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.accordionAnimate</label>
 							<config>
 								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
-								<checked>1</checked>
+								<type>check</type>
+
 							</config>
 						</TCEforms>
 					</accordionAnimate>
@@ -771,9 +767,9 @@
 							</config>
 						</TCEforms>
 					</accordionTransitionduration>
-					
+
 					<!-- SLIDER -->
-					
+
 					<sliderWidth>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -807,8 +803,8 @@
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderResizeContents</label>
 							<config>
 								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
-								<checked>0</checked>
+								<type>check</type>
+
 							</config>
 						</TCEforms>
 					</sliderResizeContents>
@@ -871,8 +867,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderRandomContent</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -883,8 +879,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderHashTags</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -895,8 +891,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderBuildArrows</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -907,8 +903,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderToggleArrows</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -919,8 +915,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderNavigation</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -931,8 +927,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderStartStop</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -943,8 +939,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderPanelFromHeader</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -955,8 +951,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderToggleControls</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -967,8 +963,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderAutoStart</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -979,8 +975,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderPauseOnHover</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -991,8 +987,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderAllowRapidChange</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1003,8 +999,8 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderResumeOnVideoEnd</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
+
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1015,8 +1011,7 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderStopAtEnd</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1027,8 +1022,7 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderPlayRtl</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1150,15 +1144,14 @@
 							<displayCond>FIELD:style:=:slider</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.sliderAutoplay</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
 					</sliderAutoplay>
-					
+
 					<!-- SLIDEDECK -->
-					
+
 					<slidedeckHeight>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -1306,8 +1299,7 @@
 							<displayCond>FIELD:style:=:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.slidedeckActivecorner</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1318,8 +1310,7 @@
 							<displayCond>FIELD:style:=:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.slidedeckIndex</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1330,8 +1321,7 @@
 							<displayCond>FIELD:style:=:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.slidedeckScroll</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1342,8 +1332,7 @@
 							<displayCond>FIELD:style:=:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.slidedeckKeys</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1354,15 +1343,14 @@
 							<displayCond>FIELD:style:=:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.slidedeckHidespines</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
 					</slidedeckHidespines>
-					
+
 					<!-- EASYACCORDION -->
-					
+
 					<easyaccordionSkin>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -1418,15 +1406,14 @@
 							<displayCond>FIELD:style:=:easyaccordion</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.easyaccordionSlideNum</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
 					</easyaccordionSlideNum>
-					
+
 					<!-- BOOKLET -->
-					
+
 					<bookletWidth>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -1493,8 +1480,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletRTL</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1616,8 +1602,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletPageNumbers</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1628,8 +1613,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletManual</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1640,8 +1624,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletShadows</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1652,8 +1635,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletClosed</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1664,8 +1646,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletCovers</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1676,8 +1657,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletAutoCenter</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1688,8 +1668,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletHash</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1700,8 +1679,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletKeyboard</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1712,8 +1690,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletAuto</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1739,8 +1716,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletOverlays</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
@@ -1751,8 +1727,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletArrows</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1763,8 +1738,7 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletArrowsHide</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
@@ -1775,29 +1749,27 @@
 							<displayCond>FIELD:style:=:booklet</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.bookletHovers</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>1</checked>
 							</config>
 						</TCEforms>
 					</bookletHovers>
-					
+
 					<!-- TYPOSCRIPT -->
-					
+
 					<typoscriptInfo>
 						<TCEforms>
 							<exclude>1</exclude>
 							<displayCond>FIELD:style:=:typoscript</displayCond>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getTypoScriptInfo]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>
 					</typoscriptInfo>
-					
+
 					<!-- AUTOPLAY -->
-					
+
 					<delayDuration>
 						<TCEforms>
 							<exclude>1</exclude>
@@ -1819,8 +1791,7 @@
 							<displayCond>FIELD:style:IN:slidedeck</displayCond>
 							<label>LLL:EXT:jfmulticontent/locallang_db.xml:tt_content.tx_jfmulticontent.autoplayCycle</label>
 							<config>
-								<form_type>user</form_type>
-								<userFunc><![CDATA[EXT:jfmulticontent/lib/class.tx_jfmulticontent_tceFunc.php:&tx_jfmulticontent_tceFunc->getCheckbox]]></userFunc>
+								<type>check</type>
 								<checked>0</checked>
 							</config>
 						</TCEforms>

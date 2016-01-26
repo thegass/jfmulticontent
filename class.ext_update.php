@@ -63,17 +63,17 @@ class ext_update
 		$out = '';
 		if (class_exists(t3lib_utility_VersionNumber) && t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version) < 4003000) {
 			// add flashmessages styles
-			$cssPath = $GLOBALS['BACK_PATH'].t3lib_extMgm::extRelPath('jfmulticontent');
+			$cssPath = $GLOBALS['BACK_PATH'].\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('jfmulticontent');
 			$out .= '<link rel="stylesheet" type="text/css" href="'.$cssPath.'compat/flashmessages.css" media="screen" />';
 		}
-		$this->flexObj = t3lib_div::makeInstance('t3lib_flexformtools');
+		$this->flexObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('t3lib_flexformtools');
 		// analyze
 		$this->contentElements = $this->getContentElements();
 		$this->wrongLanguage   = $this->getWrongLanguage();
 		$this->wrongStyle      = $this->getWrongStyle();
-		if (t3lib_div::_GP('do_update')) {
-			$out .= '<a href="'.t3lib_div::linkThisScript(array('do_update' => '', 'func' => '')).'">'.$GLOBALS['LANG']->sL($this->ll.'back').'</a><br/>';
-			$func = trim(t3lib_div::_GP('func'));
+		if (\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('do_update')) {
+			$out .= '<a href="'.\TYPO3\CMS\Core\Utility\GeneralUtility::linkThisScript(array('do_update' => '', 'func' => '')).'">'.$GLOBALS['LANG']->sL($this->ll.'back').'</a><br/>';
+			$func = trim(\TYPO3\CMS\Core\Utility\GeneralUtility::_GP('func'));
 			if (method_exists($this, $func)) {
 				$out .= '
 <div style="padding:15px 15px 20px 0;">
@@ -93,7 +93,7 @@ class ext_update
 </div>';
 			}
 		} else {
-			$out .= '<a href="'.t3lib_div::linkThisScript(array('do_update' => '', 'func' => '')).'">'.$GLOBALS['LANG']->sL($this->ll.'reload').'
+			$out .= '<a href="'.\TYPO3\CMS\Core\Utility\GeneralUtility::linkThisScript(array('do_update' => '', 'func' => '')).'">'.$GLOBALS['LANG']->sL($this->ll.'reload').'
 			<img style="vertical-align:bottom;" '.t3lib_iconWorks::skinImg($GLOBALS['BACK_PATH'], 'gfx/refresh_n.gif', 'width="18" height="16"').'></a><br/>';
 			$out .= $this->displayWarning();
 			$out .= '<h3>'.$GLOBALS['LANG']->sL($this->ll.'actions').'</h3>';
@@ -134,7 +134,7 @@ class ext_update
 
 	/**
 	 * Display the warningmessage
-	 * 
+	 *
 	 * @return html
 	 */
 	private function displayWarning()
@@ -153,7 +153,7 @@ class ext_update
 
 	/**
 	 * Returns the fieldset of updatesection
-	 * 
+	 *
 	 * @param string $content
 	 * @param string $fsLabel
 	 * @return html
@@ -172,7 +172,7 @@ class ext_update
 
 	/**
 	 * Return the button for update
-	 * 
+	 *
 	 * @param string $func
 	 * @param string $lbl
 	 * @return html
@@ -180,14 +180,14 @@ class ext_update
 	private function getButton($func, $lbl = 'DO IT')
 	{
 		$params = array('do_update' => 1, 'func' => $func);
-		$onClick = "document.location='".t3lib_div::linkThisScript($params)."'; return false;";
+		$onClick = "document.location='".\TYPO3\CMS\Core\Utility\GeneralUtility::linkThisScript($params)."'; return false;";
 		$button = '<input type="submit" value="'.$lbl.'" onclick="'.htmlspecialchars($onClick).'">';
 		return $button;
 	}
 
 	/**
 	 * Returns all content elements with old values
-	 * 
+	 *
 	 * @return array
 	 */
 	private function getContentElements()
@@ -202,7 +202,7 @@ class ext_update
 		if ($res) {
 			$resultRows = array();
 			while (($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))) {
-				$ff_parsed = t3lib_div::xml2array($row['pi_flexform']);
+				$ff_parsed = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($row['pi_flexform']);
 				// Check for old sheet values
 				if (is_array($ff_parsed['data'])) {
 					foreach ($ff_parsed['data'] as $key => $val) {
@@ -223,7 +223,7 @@ class ext_update
 
 	/**
 	 * Return all contents with wrong styles
-	 * 
+	 *
 	 * @return string
 	 */
 	private function getWrongStyle()
@@ -238,7 +238,7 @@ class ext_update
 		if ($res) {
 			$resultRows = array();
 			while (($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))) {
-				$ff_parsed = t3lib_div::xml2array($row['pi_flexform']);
+				$ff_parsed = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($row['pi_flexform']);
 				// Check for old sheet values
 				if (is_array($ff_parsed['data'])) {
 					foreach ($ff_parsed['data'] as $key => $val) {
@@ -259,7 +259,7 @@ class ext_update
 
 	/**
 	 * Returns all contents with content from differend languages
-	 * 
+	 *
 	 * @return string
 	 */
 	private function getWrongLanguage()
@@ -279,7 +279,7 @@ class ext_update
 				$res2 = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 					$select_fields,
 					$from_table,
-					'uid IN ('.implode(',', $GLOBALS['TYPO3_DB']->fullQuoteArray(t3lib_div::trimExplode(',', $row['tx_jfmulticontent_contents'], TRUE), $from_table)).')
+					'uid IN ('.implode(',', $GLOBALS['TYPO3_DB']->fullQuoteArray(\TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $row['tx_jfmulticontent_contents'], TRUE), $from_table)).')
 					AND deleted=0'
 				);
 				while (($row2 = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res2))) {
@@ -300,7 +300,7 @@ class ext_update
 
 	/**
 	 * Update the content elements
-	 * 
+	 *
 	 * @return string
 	 */
 	private function updateFlexForm()
@@ -333,7 +333,7 @@ class ext_update
 
 	/**
 	 * Update the content elements
-	 * 
+	 *
 	 * @return string
 	 */
 	private function updateWrongStyle()
@@ -358,7 +358,7 @@ class ext_update
 
 	/**
 	 * Update the content elements
-	 * 
+	 *
 	 * @return string
 	 */
 	private function updateWrongLanguage()

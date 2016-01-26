@@ -46,7 +46,7 @@ class tx_jfmulticontent_pi1_wizicon
 	{
 		$LL = $this->includeLocalLang();
 		$wizardItems['plugins_tx_jfmulticontent_pi1'] = array(
-			'icon' => t3lib_extMgm::extRelPath('jfmulticontent') . 'pi1/ce_wiz.gif',
+			'icon' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('jfmulticontent') . 'pi1/ce_wiz.gif',
 			'title' => $GLOBALS['LANG']->getLLL('pi1_title', $LL),
 			'description' => $GLOBALS['LANG']->getLLL('pi1_plus_wiz_description', $LL),
 			'params' => '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=jfmulticontent_pi1'
@@ -62,15 +62,13 @@ class tx_jfmulticontent_pi1_wizicon
 	 */
 	public function includeLocalLang()
 	{
-		$llFile = t3lib_extMgm::extPath('jfmulticontent') . 'locallang.xml';
-		$version = class_exists('t3lib_utility_VersionNumber')
-			? t3lib_utility_VersionNumber::convertVersionNumberToInteger(TYPO3_version)
-			: t3lib_div::int_from_ver(TYPO3_version);
+		$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('jfmulticontent') . 'locallang.xml';
+		$version =  \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
 		if ($version < 4006000) {
-			$LOCAL_LANG = t3lib_div::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
+			$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLXMLfile($llFile, $GLOBALS['LANG']->lang);
 		} else {
 			/** @var $llxmlParser t3lib_l10n_parser_Llxml */
-			$llxmlParser = t3lib_div::makeInstance('t3lib_l10n_parser_Llxml');
+			$llxmlParser = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Localization\\Parser\\LocallangXmlParser');
 			$LOCAL_LANG = $llxmlParser->getParsedData($llFile, $GLOBALS['LANG']->lang);
 		}
 
