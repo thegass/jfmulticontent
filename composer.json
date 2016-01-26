@@ -5,5 +5,8 @@
     "GPL-2.0+"
   ],
   "description": "jfmulticontent",
-  "type": "typo3-cms-extension"
+  "type": "typo3-cms-extension",
+  "autoload":{
+	"psr-0": {"tx_jfmulticontent_itemsProcFunc": "lib/class.tx_jfmulticontent_itemsProcFunc.php", "tx_jfmulticontent_pagerenderer":"lib/class.tx_jfmulticontent_pagerenderer.php"}
+  }
 }
