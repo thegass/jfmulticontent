@@ -27,13 +27,13 @@
  * @package	TYPO3
  * @subpackage	tx_jfmulticontent
  */
-class tx_jfmulticontent_browselinkshooks implements t3lib_browseLinksHook {
+class tx_jfmulticontent_browselinkshooks implements \TYPO3\CMS\Core\ElementBrowser\ElementBrowserHookInterface {
 
 	protected $invokingObject;
 	protected $mode;
 	protected $act;
 	protected $bparams;
-	
+
 	protected $browseLinks;
 
 	/**
@@ -224,7 +224,7 @@ class tx_jfmulticontent_browselinkshooks implements t3lib_browseLinksHook {
 						while ($rowIrre = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($resIrre)) {
 							$contents[] = $rowIrre['uid'];
 						}
-						
+
 						break;
 					}
 				}

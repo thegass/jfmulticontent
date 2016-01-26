@@ -29,7 +29,7 @@
  * @package    TYPO3
  * @subpackage tx_jfmulticontent
  */
-class tx_jfmulticontent_pi1 extends tslib_pibase
+class tx_jfmulticontent_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
 {
 	public $prefixId      = 'tx_jfmulticontent_pi1';
 	public $scriptRelPath = 'pi1/class.tx_jfmulticontent_pi1.php';
